@@ -1,0 +1,14 @@
+{
+  "name": "node-harvester",
+  "version": "0.0.0",
+  "description": "Harvest client API for Node.js 4.x built with Typescript",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Wilk <wilk3ert@gmail.com> (https://github.com/wilk)",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.9.1"
+  }
+}
