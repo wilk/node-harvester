@@ -1,7 +1,7 @@
 {
   "name": "node-harvester",
   "version": "0.0.0",
-  "description": "Harvest client API for Node.js 4.x built with Typescript",
+  "description": "Harvest API client for Node.js 4.x built with Typescript",
   "main": "index.js",
   "scripts": {
     "pretest": "tslint index.ts",
