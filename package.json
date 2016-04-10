@@ -4,8 +4,8 @@
   "description": "Harvest client API for Node.js 4.x built with Typescript",
   "main": "index.js",
   "scripts": {
-    "pretest": "tslint",
-    "preversion": "tslint",
+    "pretest": "tslint index.ts",
+    "preversion": "tslint index.ts",
     "test": "mocha --no-timeouts"
   },
   "author": {
