@@ -4,11 +4,26 @@
   "description": "Harvest client API for Node.js 4.x built with Typescript",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "pretest": "tslint",
+    "preversion": "tslint",
+    "test": "mocha --no-timeouts"
   },
-  "author": "Wilk <wilk3ert@gmail.com> (https://github.com/wilk)",
-  "license": "ISC",
+  "author": {
+    "name": "Vincenzo (Wilk) Ferrari",
+    "email": "wilk3ert@gmail.com",
+    "url": "https://github.com/wilk"
+  },
+  "engines": {
+    "node": ">=4.4.2",
+    "npm": "~2.15.0"
+  },
+  "license": "MIT",
   "dependencies": {
     "axios": "^0.9.1"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "config": "^1.20.1",
+    "mocha": "^2.4.5"
   }
 }
