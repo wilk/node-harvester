@@ -1,11 +1,14 @@
-import * as fs from 'fs';
+interface IHarvestOptions {
+    subdomain: string;
+    username: string;
+    password: string;
+}
 
-console.log('hello world');
+export class Harvest {
+    constructor(opts: IHarvestOptions) {
+        console.log(opts);
+    }
+}
 
-fs.readFile('tsconfig.json', 'utf-8', (err: any, buf: Buffer) => {
-    console.log(buf);
-});
-
-var Harvest = require('node-harvester'),
-    harvest = new Harvest(cfg);
-
+let harvest: Harvest = new Harvest({password: 'tst', subdomain: 'test', username: 'tst'});
+console.log(harvest);
