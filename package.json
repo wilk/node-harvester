@@ -4,7 +4,7 @@
   "description": "Harvest API client for Node.js 4.x built with Typescript",
   "main": "index.js",
   "scripts": {
-    "preinstall": "tslint -v && mocha --version && tsc -v && tsd --version",
+    "preinstall": "tslint -v && mocha --version && tsc -v && tsd --version && typedoc -v",
     "postinstall": "tsd install",
     "pretest": "tslint index.ts",
     "preversion": "tslint index.ts",
