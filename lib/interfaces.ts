@@ -1,5 +1,5 @@
 export interface IHarvestConfig {
-    subdomain: string;
+    account: string;
     username: string;
     password: string;
 }
