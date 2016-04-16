@@ -1,12 +1,18 @@
 import * as axios from 'axios';
+import AxiosHttpBasicAuth = Axios.AxiosHttpBasicAuth;
 
 export class Gateway {
     url: string;
+    auth: AxiosHttpBasicAuth;
     req: any;
     
-    constructor(url: string) {
+    constructor(url: string, username: string, password: string) {
         this.url = url;
-        this.req = axios;
+        this.auth = {username: username, password: password};
+        this.req = axios.create({
+            baseURL: this.url,
+            auth: this.auth
+        });
     }
     
     get(url: string): any {

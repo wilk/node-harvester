@@ -3,13 +3,11 @@ import {IHarvestConfig} from './lib/interfaces';
 import {Gateway} from './lib/gateway';
 
 export class Harvest {
-    config: IHarvestConfig;
     gateway: Gateway;
     expenses: Expenses;
 
     constructor(config: IHarvestConfig) {
-        this.config = config;
-        this.gateway = new Gateway(`https://${this.config.account}.harvestapp.com`);
+        this.gateway = new Gateway(`https://${config.account}.harvestapp.com`, config.username, config.password);
         this.expenses = new Expenses(this.gateway);
     }
 }
