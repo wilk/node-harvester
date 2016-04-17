@@ -1,4 +1,4 @@
-import {Gateway} from "../gateway";
+import {Gateway} from '../gateway';
 
 export class Expenses {
     gateway: Gateway;

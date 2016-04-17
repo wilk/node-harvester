@@ -14,7 +14,7 @@
       "check-lowercase"
     ],
     "curly": true,
-    "eofline": true,
+    "eofline": false,
     "forin": true,
     "indent": [
       true,
@@ -28,7 +28,7 @@
       true,
       140
     ],
-    "member-access": true,
+    "member-access": false,
     "member-ordering": [
       true,
       "public-before-private",
@@ -74,7 +74,6 @@
     "one-line": [
       true,
       "check-open-brace",
-      "check-catch",
       "check-else",
       "check-finally",
       "check-whitespace"

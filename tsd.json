@@ -10,6 +10,18 @@
     },
     "axios/axios.d.ts": {
       "commit": "641df27e73ca67fa7199a3deedae104198d41a17"
+    },
+    "mocha/mocha.d.ts": {
+      "commit": "3a6d3932540ec87e00475012e0336fec28996047"
+    },
+    "chai/chai.d.ts": {
+      "commit": "3a6d3932540ec87e00475012e0336fec28996047"
+    },
+    "assertion-error/assertion-error.d.ts": {
+      "commit": "3a6d3932540ec87e00475012e0336fec28996047"
+    },
+    "config/config.d.ts": {
+      "commit": "bc9b3d9c8007553240d756dff8cd6c4526225d79"
     }
   }
 }

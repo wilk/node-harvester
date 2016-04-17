@@ -1,5 +1,7 @@
 {
-  "subdomain": "",
-  "username": "",
-  "password": ""
+  "harvest": {
+    "account": "",
+    "username": "",
+    "password": ""
+  }
 }

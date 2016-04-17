@@ -11,7 +11,11 @@ export class Gateway {
         this.auth = {username: username, password: password};
         this.req = axios.create({
             baseURL: this.url,
-            auth: this.auth
+            auth: this.auth,
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            }
         });
     }
     
