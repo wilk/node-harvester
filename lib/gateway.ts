@@ -18,8 +18,20 @@ export class Gateway {
             }
         });
     }
-    
+
     get(url: string): any {
+        return this.req.get(`${this.url}${url}`);
+    }
+
+    post(url: string, data: any): any {
+        return this.req.get(`${this.url}${url}`, data);
+    }
+
+    put(url: string, data: any): any {
+        return this.req.get(`${this.url}${url}`, data);
+    }
+
+    delete(url: string): any {
         return this.req.get(`${this.url}${url}`);
     }
 }

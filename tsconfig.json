@@ -8,6 +8,7 @@
   "files": [
     "./typings/tsd.d.ts",
     "./index.ts",
-    "./test/account.test.ts"
+    "./test/account.test.ts",
+    "./test/clients.test.ts"
   ]
 }

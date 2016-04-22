@@ -9,7 +9,6 @@ let expect: ExpectStatic = chai.expect,
 describe('Harvest Account', () => {
     it('should return info about the current user', async function (): Promise<void> {
         try {
-
             let harvest: Harvest = new Harvest(harvestCfg);
             let response: any = await harvest.account.whoami();
             expect(response).not.to.be.null;
