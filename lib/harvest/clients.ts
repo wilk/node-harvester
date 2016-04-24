@@ -38,7 +38,7 @@ export class Clients {
         return new Promise<IClient|Error>(async function (resolve: Function, reject: Function): Promise<void> {
             try {
                 let response: any = await this.gateway.get(`/clients/${clientId}`);
-                resolve(response.data);
+                resolve(response.data.client);
             }
             catch (err) {
                 reject(err);

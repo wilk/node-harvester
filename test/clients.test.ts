@@ -8,7 +8,7 @@ let expect: ExpectStatic = chai.expect,
     harvest: Harvest = new Harvest(harvestCfg),
     clientConfig: IClient = {
         name: 'An Example Ltd',
-        currency: 'Europe Euro - EUR',
+        currency: 'Euro - EUR',
         currency_symbol: '€',
         details: '123 Via XXV Aprile, Italy 12345'
     },
@@ -35,8 +35,8 @@ describe('Harvest Clients', function (): void {
             .then((client: IClient): void => {
                 expect(client).to.be.not.null;
                 expect(client.id).to.be.a('number');
-                expect(client.name).to.equal(clientConfig.name);
                 expect(client.currency_symbol).to.equal(clientConfig.currency_symbol);
+                expect(client.currency).to.equal(clientConfig.currency);
                 clientId = client.id;
                 done();
             })
@@ -58,8 +58,8 @@ describe('Harvest Clients', function (): void {
             .then(function (client: IClient): void {
                 expect(client).to.be.not.null;
                 expect(client.id).to.be.a('number');
-                expect(client.name).to.equal(clientConfig.name);
                 expect(client.currency_symbol).to.equal(clientConfig.currency_symbol);
+                expect(client.currency).to.equal(clientConfig.currency);
                 done();
             })
             .catch(errorHandlerBuilder(done, 200));
