@@ -6,7 +6,7 @@
   "scripts": {
     "preinstall": "tslint -v && mocha --version && tsc -v && tsd --version && typedoc -v",
     "postinstall": "tsd install",
-    "pretest": "tslint index.ts ./lib/**/*.ts ./test/**/*.ts",
+    "pretest": "tslint index.ts ./lib/**/*.ts ./test/**/*.ts && tsc",
     "preversion": "tslint index.ts",
     "test": "mocha --no-timeouts"
   },
