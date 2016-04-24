@@ -17,6 +17,7 @@ let expect: ExpectStatic = chai.expect,
 let errorHandlerBuilder: Function = function (done: Function, status: number): Function {
     return function (err: Error|any): void {
         if (err instanceof Error) return done(err);
+
         try {
             expect(err).to.be.not.instanceOf(Error);
             expect(err.status).to.not.equal(status);
