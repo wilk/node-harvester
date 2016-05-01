@@ -50,7 +50,8 @@ export class Clients {
         return new Promise<IClient|Error>(async function (resolve: Function, reject: Function): Promise<void> {
             try {
                 let response: any = await this.gateway.post('/clients', {client: client});
-                resolve(response.data[response.data.length - 1].client);
+                client.id = parseInt(response.headers.location.replace('/clients/', ''));
+                resolve(client);
             }
             catch (err) {
                 reject(err);

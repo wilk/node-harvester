@@ -7,20 +7,26 @@ let expect: ExpectStatic = chai.expect,
     harvestCfg: IHarvestConfig = config.get<IHarvestConfig>('harvest'),
     harvest: Harvest = new Harvest(harvestCfg),
     clientConfig: IClient = {
-        name: 'An Example Ltd',
+        name: 'An Example 7 Ltd',
         currency: 'Euro - EUR',
         currency_symbol: '€',
         details: '123 Via XXV Aprile, Italy 12345'
     },
     clientId: number;
 
-let errorHandlerBuilder: Function = function (done: Function, status: number): Function {
+let errorHandlerBuilder: Function = function (done: Function, statusStart: number, statusEnd?: number): Function {
     return function (err: Error|any): void {
         if (err instanceof Error) return done(err);
 
         try {
             expect(err).to.be.not.instanceOf(Error);
-            expect(err.status).to.not.equal(status);
+
+            if (!statusEnd) expect(err.status).to.equal(statusStart);
+            else {
+                expect(err.status).to.be.least(statusStart);
+                expect(err.status).to.be.below(statusEnd);
+            }
+
             done();
         }
         catch (err) {
@@ -40,7 +46,7 @@ describe('Harvest Clients', function (): void {
                 clientId = client.id;
                 done();
             })
-            .catch(errorHandlerBuilder(done, 200));
+            .catch(errorHandlerBuilder(done, 200, 400));
     });
 
     it('should return the clients list', function (done: Function): void {
@@ -50,7 +56,7 @@ describe('Harvest Clients', function (): void {
                 expect(clients).to.have.length.above(0);
                 done();
             })
-            .catch(errorHandlerBuilder(done, 200));
+            .catch(errorHandlerBuilder(done, 200, 400));
     });
 
     it('should return the created client', function (done: Function): void {
@@ -62,7 +68,7 @@ describe('Harvest Clients', function (): void {
                 expect(client.currency).to.equal(clientConfig.currency);
                 done();
             })
-            .catch(errorHandlerBuilder(done, 200));
+            .catch(errorHandlerBuilder(done, 200, 400));
     });
 
     xit('should toggle the created client', function (done: Function): void {
@@ -70,7 +76,7 @@ describe('Harvest Clients', function (): void {
             .then((): void => {
                 done();
             })
-            .catch(errorHandlerBuilder(done, 200));
+            .catch(errorHandlerBuilder(done, 200, 400));
     });
 
     it('should delete the created client', function (done: Function): void {

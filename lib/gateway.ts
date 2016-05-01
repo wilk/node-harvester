@@ -24,14 +24,14 @@ export class Gateway {
     }
 
     post(url: string, data: any): any {
-        return this.req.get(`${this.url}${url}`, data);
+        return this.req.post(`${this.url}${url}`, data);
     }
 
     put(url: string, data: any): any {
-        return this.req.get(`${this.url}${url}`, data);
+        return this.req.put(`${this.url}${url}`, data);
     }
 
     delete(url: string): any {
-        return this.req.get(`${this.url}${url}`);
+        return this.req.delete(`${this.url}${url}`);
     }
 }

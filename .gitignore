@@ -33,3 +33,4 @@ typings
 *.js
 *.map
 config/local.json
+dist

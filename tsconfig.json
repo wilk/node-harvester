@@ -3,7 +3,10 @@
     "module": "commonjs",
     "target": "es6",
     "sourceMap": true,
-    "experimentalDecorators": true
+    "experimentalDecorators": true,
+    "removeComments": true,
+    "inlineSources": true,
+    "outDir": "dist"
   },
   "files": [
     "./typings/tsd.d.ts",

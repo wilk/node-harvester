@@ -8,7 +8,7 @@
     "postinstall": "tsd install",
     "pretest": "tslint index.ts ./lib/**/*.ts ./test/**/*.ts && tsc",
     "preversion": "tslint index.ts",
-    "test": "mocha --no-timeouts"
+    "test": "mocha dist/test --no-timeouts"
   },
   "author": {
     "name": "Vincenzo (Wilk) Ferrari",
